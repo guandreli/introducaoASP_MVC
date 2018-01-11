@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    Styles.Render("~/Content/css");
+
+}
+
+<h2>Home</h2>
+
+<div class="site">
+    <div class="col-md-4">
+        <h2>Getting started</h2>
+
+        <p>
+            @ViewBag.id<br />
+            @ViewBag.nome<br />
+            @ViewBag.tipoPessoa
+        </p>
+    </div>
+
+    <form action="Home/Lista" method="POST">
+        <fieldset>
+            <legend>Informações Pessoa</legend>
+
+            <div>
+                <label for="id">Nome</label>
+                <input type="text" value="@Model.nome" name="nome" />
+            </div>
+            <div>
+                <label for="id">Codigo Tipo</label>
+                <input type="number" value="@Model.codTipo" name="codTipo" />
+            </div>
+            <input type="submit" value="Enviar" />
+        </fieldset>
+    </form>
+</div>
