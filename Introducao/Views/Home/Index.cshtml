@@ -4,26 +4,27 @@
     ViewBag.Title = "Home Page";
 }
 
-<h2>Home</h2>
+<h2>Home Index</h2>
+
 <div>
     <p>
         @Model.id<br />
         @Model.nome<br />
         @Model.usuario
     </p>
-    <form action="Home/Lista" method="POST">
+    @using (Html.BeginForm("Lista", "Home", FormMethod.Post)) {
         <fieldset>
             <legend>Informações Pessoa</legend>
 
             <div>
-                <label for="id">Nome</label>
-                <input type="text" value="@Model.nome" name="nome" />
+                @Html.LabelFor(x => x.nome)
+                @Html.EditorFor(x => x.nome)
             </div>
             <div>
-                <label for="id">Codigo Tipo</label>
-                <input type="number" value="@Model.codTipo" name="codTipo" />
+                @Html.LabelFor(x => x.codTipo)
+                @Html.EditorFor(x => x.codTipo)
             </div>
             <input type="submit" value="Enviar" />
         </fieldset>
-    </form>
+    }
 </div>

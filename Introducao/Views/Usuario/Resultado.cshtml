@@ -1,0 +1,16 @@
+﻿@model Introducao.Models.Usuario
+
+@{
+    ViewBag.Title = "Resultado";
+}
+
+<h2>Cadastro Realizado</h2>
+<div>
+    <b>@Html.DisplayNameFor(x => x.nome):</b>
+    @Model.nome<br />
+    <b>@Html.DisplayNameFor(x => x.email):</b>
+    @Model.email<br />
+    <b>@Html.DisplayNameFor(x => x.observacoes): </b>
+    @Model.observacoes
+</div>
+

@@ -11,14 +11,16 @@ namespace Introducao.Controllers {
 
         // GET: Home
         public ActionResult Index() {
-            return View(pessoa);
+            var a = new Pessoa();
+            a.primeiroRegistro();
+            return View(a);
         }
 
         public ActionResult Contact() {
             return View();
         }
 
-        public ActionResult About() {
+        public ActionResult Sobre() {
             return View();
         }
 

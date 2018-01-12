@@ -1,0 +1,53 @@
+﻿@model Introducao.Models.Usuario
+@{
+    ViewBag.Title = "Usuario";
+}
+
+<h2>Usuario</h2>
+
+<div>
+    @using (Html.BeginForm("Usuario", "Usuario", FormMethod.Post)) {
+
+
+        @Html.ValidationSummary(true)
+        <fieldset>
+            <legend>Dados do usuário: </legend>
+            <div>
+                @Html.LabelFor(x => x.nome)<br />
+                @Html.EditorFor(x => x.nome)
+                @Html.ValidationMessageFor(x => x.nome)
+            </div>
+            <div>
+                @Html.LabelFor(x => x.email)<br />
+                @Html.EditorFor(x => x.email)
+                @Html.ValidationMessageFor(x => x.email)
+            </div>
+            <div>
+                @Html.LabelFor(x => x.idade)<br />
+                @Html.EditorFor(x => x.idade)
+            </div>
+            <div>
+                @Html.LabelFor(x => x.senha)<br />
+                @Html.PasswordFor(x => x.senha)
+                @Html.ValidationMessageFor(x => x.senha)
+            </div>
+            <div>
+                @Html.LabelFor(x => x.confirmarSenha)<br />
+                @Html.PasswordFor(x => x.confirmarSenha)
+                @Html.ValidationMessageFor(x => x.confirmarSenha)
+            </div>
+            <div>
+                @Html.LabelFor(x => x.observacoes)<br />
+                @Html.TextAreaFor(x => x.observacoes)<br /><br />
+            </div>
+            <div>
+                <p>
+                    <input type="submit" value="Cadastrar" class="btn btn-primary" />
+                </p>
+            </div>
+        </fieldset>
+        @section Scripts {
+            @Scripts.Render("~/bundles/jqueryval");
+        }
+    }
+</div>
