@@ -7,17 +7,10 @@ using System.Web.Mvc;
 
 namespace Introducao.Controllers {
     public class HomeController : Controller {
+        Pessoa pessoa = new Pessoa();
+
         // GET: Home
         public ActionResult Index() {
-            var pessoa = new Pessoa();
-            pessoa.id = 0;
-            pessoa.nome = "Gustavo";
-            pessoa.codTipo = 2;
-            pessoa.tipoPessoa(pessoa.codTipo);
-
-            ViewBag.id = pessoa.id;
-            ViewBag.nome = pessoa.nome;
-            ViewBag.tipoPessoa = pessoa.usuario;
             return View(pessoa);
         }
 
@@ -35,8 +28,8 @@ namespace Introducao.Controllers {
 
 
         [HttpPost]
-        public ActionResult Lista(Pessoa pessoa) {
-            pessoa.tipoPessoa(pessoa.codTipo);
+        public ActionResult Lista(string nome, int codTipo) {
+            pessoa.alterarDados(nome, codTipo);
             return View(pessoa);
         }
     }

@@ -1,22 +1,16 @@
-﻿@{
-    ViewBag.Title = "Home Page";
-    Styles.Render("~/Content/css");
+﻿@model Introducao.Models.Pessoa
 
+@{
+    ViewBag.Title = "Home Page";
 }
 
 <h2>Home</h2>
-
-<div class="site">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-
-        <p>
-            @ViewBag.id<br />
-            @ViewBag.nome<br />
-            @ViewBag.tipoPessoa
-        </p>
-    </div>
-
+<div>
+    <p>
+        @Model.id<br />
+        @Model.nome<br />
+        @Model.usuario
+    </p>
     <form action="Home/Lista" method="POST">
         <fieldset>
             <legend>Informações Pessoa</legend>
