@@ -23,8 +23,14 @@
                 @Html.ValidationMessageFor(x => x.email)
             </div>
             <div>
+                @Html.LabelFor(x => x.login)<br />
+                @Html.EditorFor(x => x.login)
+                @Html.ValidationMessageFor(x => x.login)
+            </div>
+            <div>
                 @Html.LabelFor(x => x.idade)<br />
                 @Html.EditorFor(x => x.idade)
+                @Html.ValidationMessageFor(x => x.idade)
             </div>
             <div>
                 @Html.LabelFor(x => x.senha)<br />
@@ -38,7 +44,8 @@
             </div>
             <div>
                 @Html.LabelFor(x => x.observacoes)<br />
-                @Html.TextAreaFor(x => x.observacoes)<br /><br />
+                @Html.TextAreaFor(x => x.observacoes)
+                @Html.ValidationMessageFor(x => x.observacoes)<br /><br />
             </div>
             <div>
                 <p>

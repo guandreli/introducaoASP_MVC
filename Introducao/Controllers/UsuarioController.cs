@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -36,6 +37,15 @@ namespace Introducao.Controllers
 
         public ActionResult Resutado(Usuario usuario) {
             return View(usuario);
+        }
+
+        public ActionResult LoginUnico(string login) {
+            var bdExemplo = new Collection<string> {
+                "blabla",
+                "huehue",
+                "gustavo"
+            };
+            return Json(bdExemplo.All(x => x.ToLower() != login.ToLower()), JsonRequestBehavior.AllowGet);
         }
     }
 }
